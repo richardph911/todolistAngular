@@ -23,7 +23,7 @@ export class WelcomeComponent implements OnInit {
   onSubmit(){
     const title = this.addLinkForm.controls['title'].value;
     const article = this.addLinkForm.controls['article'].value;
-    this.store.dispatch(new ArticleActions.AddArticle(new Article(++this.id, title, article, 0)));
+    this.store.dispatch(new ArticleActions.AddArticle({id: this.id, title, link: article, points: 30}));
   }
 
 }

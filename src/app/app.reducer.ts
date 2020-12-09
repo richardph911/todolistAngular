@@ -7,5 +7,3 @@ export interface AppState{
 export const appReducer: ActionReducerMap<AppState> = {
     articles: fromArticle.reducer,
 }
-export const getArticleState = (state : AppState) => state.articles;
-export const getArticles = createSelector(getArticleState,fromArticle.getArticles);

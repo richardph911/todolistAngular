@@ -1,8 +1,7 @@
 <div class="display" *ngIf="articles">
     <h3>Articles</h3>
     <ul>
-      <li (click)="deleteArticle(i)" *ngFor="let article of articles | async; let i = index">>{{ article}}</li>
+      <li (click)="deleteArticle(i)" *ngFor="let article of articles | async; let i = index">>{{ article.title}}</li>
     </ul>
   
   </div>
-  
