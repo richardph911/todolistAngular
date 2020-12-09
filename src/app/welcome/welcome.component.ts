@@ -10,18 +10,20 @@ import * as ArticleActions from '../redux/actions/article.actions';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
+  id: number = 0;
   addLinkForm: FormGroup;
   constructor(private store: Store<AppState>) { }
 
   ngOnInit(){
     this.addLinkForm = new FormGroup({
-      title: new FormControl('', {validators: [Validators.required, Validators.minLength(5)] }),
-      article: new FormControl('', { validators: [Validators.required, Validators.minLength(5)] })
+      title: new FormControl('', {validators: [Validators.required, Validators.minLength(3)] }),
+      article: new FormControl('', { validators: [Validators.required, Validators.minLength(3)] })
     });
   }
   onSubmit(){
-    let newArticle = new Article('A','B','C', 33);
-    this.store.dispatch(new ArticleActions.AddArticle(newArticle));
+    const title = this.addLinkForm.controls['title'].value;
+    const article = this.addLinkForm.controls['article'].value;
+    this.store.dispatch(new ArticleActions.AddArticle(new Article(++this.id, title, article, 0)));
   }
 
 }
