@@ -37,5 +37,3 @@ export function reducer(state: State = initialState, action: actions.Actions){
             return state;
     }
 }
-
-export const getArticles = (state : State) => state.articles;
