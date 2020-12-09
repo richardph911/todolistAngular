@@ -1,14 +1,14 @@
 import { Article } from '../model/article.model';
 import * as actions from '../actions/article.actions';
 
-export interface State{
+export interface State {
     articles: Article[],
 }
 export const initialState: State = {
-    articles : [new Article('A','B','C',11),new Article('A','B','C',11)],
+    articles : [{id: 0, title: 'title1', link: 'link1', points: 10 }, {id: 1, title: 'title2', link: 'link2', points: 20 }],
 }
 export function reducer(state: State = initialState, action: actions.Actions){
-    switch( action.type){
+    switch(action.type){
         case actions.ADD_ARTICLE:
             return {
                 ...state,
