@@ -1,0 +1,16 @@
+<section>
+    <form
+      fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px"
+      [formGroup]="addLinkForm" (ngSubmit)="onSubmit()">
+      <h3>Add an article</h3>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Title" formControlName="title">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Article Link" formControlName="article">
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="primary" [disabled]="addLinkForm.invalid">Submit Article</button>  
+    </form>
+  </section>
+
+  
